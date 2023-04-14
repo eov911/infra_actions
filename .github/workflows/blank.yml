@@ -45,6 +45,7 @@ jobs:
     steps:
     - name: build docker image
       run: |
+        cd ..
         # запуск сборки образа
         docker build -t infra_workflows:latest -f Dockerfile .
   # Деплой приложения на удалённый сервер
