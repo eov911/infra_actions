@@ -39,15 +39,15 @@ jobs:
         python manage.py test
 
   # Собрать и отправить образ приложения на DockerHub
-  build:
-    runs-on: ubuntu-latest
-    needs: tests # Не выполнять сразу, ждать, пока выполнится tests
-    steps:
-    - name: build docker image
-      run: |
-        cd ../..
-        # запуск сборки образа
-        docker build -t infra_workflows:latest -f Dockerfile .
+  # build:
+  #  runs-on: ubuntu-latest
+  #  needs: tests # Не выполнять сразу, ждать, пока выполнится tests
+  #  steps:
+  #  - name: build docker image
+  #    run: |
+  #      cd ../..
+  #      # запуск сборки образа
+  #      docker build -t infra_workflows:latest -f Dockerfile .
   # Деплой приложения на удалённый сервер
   build_and_push_to_docker_hub:
       name: Push Docker image to Docker Hub
